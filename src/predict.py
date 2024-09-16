@@ -23,6 +23,7 @@ class Predictor:
     """
 
     models: Dict[str, FasterWhisperPipeline] = {}
+    model_dir: str = "/tmp"
 
     @property
     def device(self):
@@ -40,7 +41,14 @@ class Predictor:
         loaded_model = load_model(
             model_name,
             device=self.device,
-            compute_type=self.compute_type)
+            compute_type=self.compute_type,
+            download_root=self.model_dir,
+            asr_options = {
+                "max_new_tokens": None,
+                "clip_timestamps": None,
+                "hallucination_silence_threshold": None,
+            }
+        )
 
         return model_name, loaded_model
 
@@ -49,7 +57,7 @@ class Predictor:
         Load the model into memory to make running multiple predictions efficient
         """
 
-        model_names = ["tiny", "base", "small", "medium", "large-v1", "large-v2", "large-v3"]
+        model_names = ["tiny", "large-v2"]   #  ["tiny", "base", "small", "medium", "large-v1", "large-v2", "large-v3"]
         with ThreadPoolExecutor() as executor:
             for model_name, model in executor.map(self.load_model, model_names):
                 if model_name is not None:
