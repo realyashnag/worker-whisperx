@@ -2,10 +2,11 @@
 
 <h1>WhisperX | Worker</h1>  
 
-[WhisperX](https://github.com/m-bain/whisperX?tab=readme-ov-file) for serverless RunPod inferencing. Uses [Faster Whisper](https://github.com/guillaumekln/faster-whisper) as a template.
+[WhisperX](https://github.com/m-bain/whisperX?tab=readme-ov-file) for serverless RunPod inferencing. Uses [Faster Whisper](https://github.com/guillaumekln/faster-whisper) as a template. [Docker Image](https://hub.docker.com/r/realyashnag/worker-whisperx) is hosted on Docker Hub.
 
 
 <h1>Faster Whisperx | Worker</h1>  
+
 This repository contains the [Faster Whisper](https://github.com/guillaumekln/faster-whisper) Worker for RunPod. The Whisper Worker is designed to process audio files using various Whisper models, with options for transcription formatting, language translation, and more. It's part of the RunPod Workers collection aimed at providing diverse functionality for endpoint processing.
 
 [Endpoint Docs](https://docs.runpod.io/reference/faster-whisper)
