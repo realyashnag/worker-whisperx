@@ -98,4 +98,4 @@ class Predictor:
             return_char_alignments=False,
             print_progress=True
         )
-        return TranscriberOutput(**result)
+        return result
